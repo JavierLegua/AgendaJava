@@ -86,7 +86,6 @@ public class Agenda {
 	public static void buscarContacto(String mContactos[][]) {
 		Scanner leer = new Scanner(System.in);
 		String buscar = "";
-		int j = 0;
 		System.out.println("¿Que contacto quieres buscar?");
 		buscar = leer.next();
 		for (int i = 0; i < mContactos.length; i++) {
