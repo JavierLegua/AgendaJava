@@ -67,20 +67,24 @@ public class Agenda {
 	}
 
 	public static void eliminarContacto(String mContactos[][]) {
-
+		int pos;
 		Scanner leer = new Scanner(System.in);
 		String borrar = "";
 		System.out.println("¿Que contacto quieres borrar?");
 		borrar = leer.next();
-		for (int i = 0; i < mContactos.length; i++) {
-			if (mContactos[i][0].equalsIgnoreCase(borrar) || mContactos[i][1].equalsIgnoreCase(borrar)) {
-				mContactos[i][0] = "";
-				mContactos[i][1] = "";
-				System.out.println("El contacto ha sido borrado.");
-			} else {
-				System.out.println("No se ha encontrado el contacto introducido.");
-			}
+		pos = buscarContacto(mContactos, borrar);
+
+		if (pos == -1) {
+
+			System.out.println("No se ha encontrado el contacto introducido.");
+
+		} else {
+			mContactos[pos][0] = "";
+			mContactos[pos][1] = "";
+			System.out.println("El contacto ha sido borrado.");
+
 		}
+
 	}
 
 	public static void buscarContacto(String mContactos[][]) {
